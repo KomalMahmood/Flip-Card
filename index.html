@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>index</title>
+	<style>
+		.flip
+		{
+			width: 400px;
+			height: 300px;
+			perspective: 1000px;
+			position: relative;
+			top: 100px;
+			left: 35%;
+		}
+		.front,.back,.outer 
+		{
+			
+			width: 100%;
+			height: 100%;
+			
+		}
+		.flip .outer
+		{
+			border:5px solid white;
+			box-shadow:0px 0px 3px 3px grey;
+			border-radius: 10px;
+			position: relative;
+			transform-style: preserve-3d;
+			
+			transition: transform 0.35s;
+		}
+		.flip .front img
+		{
+			position: absolute;
+			width: 100%;
+			height: 100%;
+		}
+		
+		.flip .back
+		{
+			position: absolute;
+			top: 0;
+			transform: rotateY(180deg);
+			background-color: black;
+			color: white;
+			text-align: center;
+		}
+		.flip .back p
+		{
+			width: 90%;
+			margin-left: 5%;
+			font-size: 18px;
+			line-height: 4vh;
+		}
+		.flip:hover .outer
+		{
+            transform: rotateY(-180deg);
+		}
+	</style>
+</head>
+<body>
+<div class="flip"><!-- we give perspective to grandparent,width & height -->
+	<div class="outer"> <!-- we give transform-style:preserve 3d; to parent element ,position relitive give it some width height as well-->
+<div class="front"><!-- position absolute and width,height 100% fitting according to parent size -->
+     <img src="1.jpg">
+</div>
+
+<div class="back"><!-- position absolute & width height 100% ,rotateY(180deg)-->
+	<h1>Dont be a Worrier,Be a Warrior</h1>
+	<p>Being a girl doesnt mean you have to wait for your other half to complete your self,Be independent and the other one should only add value to your life</p>
+</div>
+
+</div>
+</div>
+</body>
+</html>
